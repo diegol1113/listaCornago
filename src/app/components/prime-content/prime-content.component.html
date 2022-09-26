@@ -1,0 +1,16 @@
+
+<p>lista de presentes, los alumnos presentes figuran en rosa y los ausentes en amarillo</p>
+<div class="border" appDirectivaStudentsList>
+    <ul>
+        <li *ngFor="let student of students" [ngClass]="student.presente === true ? 'presente' : 'ausente'">{{student.nombre}}</li>
+    </ul>
+</div>
+<p>solo presentes y ausentes justificados</p>
+<div class="border" appDirectivaStudentsList>
+    <ul>
+        <div *ngFor="let student of students">
+            <li *ngIf="student.presente || student.justificativo === true">{{student.nombre}}</li>
+
+        </div>
+    </ul>
+</div>
